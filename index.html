@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Punta Gorda, FL Weather Conditions</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/202d2f6110.js" crossorigin="anonymous"></script>
+        
+        <!---All code written by Orlando Rios
+            this website is for demonstration of front-end dev skills only
+            and not meant to deceive users or cause any other legal trouble-->
+
+    </head>
+    <body>
+        <nav>
+            <div class="nav-items">
+                <img src="images/logo.png" id="logo" alt="logo">
+                <ul>
+                    <li style="border-left: thin solid gray;" id="red">Sensor Network</li>
+                    <li id="orange">Maps & Radar</li>
+                    <li id="yellow">Severe Weather</li>
+                    <li id="green">News & Blogs</li>
+                    <li id="light-blue">Mobile Apps</li>
+                    <li id="blue">More 
+                        <i class="fa-solid fa-angle-down" style="color: #ffffff; padding-left: 5px;"></i>
+                    </li>
+                </ul>
+                <input type="text" class="nav-search" placeholder="Search Locations">
+                <ul class="login-links">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#" style="border-left: thin solid white; padding-left: 10px;">Register</a></li>
+                    <li><i class="fa-solid fa-gear" style="color: #dcdada;"></i></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="popular-cities-container">
+            <ul class="popular-cities-list">
+                <li><i class="fa-solid fa-star" id="star" style="color: #e0e0e0;"></i></li>
+                <li>Popular Cities</li>
+                <li class="popular-city">
+                    <i class="fa-solid fa-cloud-sun" style="color: #33342d;"></i>
+                    <div class="popular-city-info">
+                        San Francisco, CA
+                        <span>61 °F Mostly Cloudy</span>
+                    </div>
+                </li>
+                <li class="popular-city">
+                    <i class="fa-solid fa-cloud-sun" style="color: #33342d;"></i>
+                    <div class="popular-city-info">
+                        Manhattan, NY
+                        <span>51 °F Mostly Cloudy</span>
+                    </div>
+                </li>
+                <li class="popular-city">
+                    <i class="fa-solid fa-sun" style="color: #33342d;"></i>
+                    <div class="popular-city-info">
+                        Chicago, IL
+                        <span>57 °F Sunny</span>
+                    </div>
+                </li>
+                <li class="popular-city">
+                    <i class="fa-solid fa-cloud-sun" style="color: #33342d;"></i>
+                    <div class="popular-city-info">
+                        Boston, MA
+                        <span>45 °F Mostly Cloudy</span>
+                    </div>
+                </li>
+                <li class="popular-city">
+                    <i class="fa-solid fa-cloud" style="color: #33342d;"></i>
+                    <div class="popular-city-info">
+                        Houston, TX
+                        <span>63 °F Cloudy</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="current-city-title">
+            <p>Elev 13 ft, 26.93 °N, 82.05 °W</p>
+            <span style="display: flex; flex-direction: row;">
+                <p style="font-size: 25px;">Punta Gorda, FL Weather Conditions</p>
+                <i class="fa-solid fa-star" id="star" style="color: #e0e0e0;"></i>
+
+            </span>
+            <span>
+                <i class="fa-solid fa-cloud" style="color: #33342d;"></i>
+                82° <a href="#">Punta Gorda Isles Station</a>
+                Change
+            </span>
+        </div>
+        <div class="forecast-options-tabs">
+            <ul class="options-tabs">
+                <li class="tab-links active-tab" onclick="openTab()">TODAY</li>
+                <li class="tab-links" onclick="openTab()">HOURLY</li>
+                <li class="tab-links" onclick="openTab()">10-DAY</li>
+                <li class="tab-links" onclick="openTab()">CALENDAR</li>
+                <li class="tab-links" onclick="openTab()">HISTORY</li>
+                <li class="tab-links" onclick="openTab()">WUNDERMAP</li>
+            </ul>
+        </div>
+        <div class="top-weather-container">
+            <div class="top-left-container">
+                <span id="current-time"></span>
+                <div class="top-left-middle">
+                    <div class="temperature-circle">
+                        <div class="circle-text">
+                            <span>80° | 72° </span>
+                            <h3 style="font-size: 80px; color: orange;">76°</h3>
+                            <span>LIKE 78°</span>
+                        </div>
+                    </div>
+                    <div class="current-weather-icons">
+                        <i class="fa-solid fa-cloud-rain" style="color: #6e7277; font-size: 80px; padding-bottom: 30px;"></i>
+                        <div class="wind-circle">
+                            <div class="wind-circle-text">
+                                <span>5 <br></span>
+                                <span>N</span>
+                            </div>
+                        </div>
+                        <span>Gusts 9 mph</span>
+                    </div>
+                </div>
+                <div class="top-left-bottom">
+                    <span>Today's temperature is forecast to be MUCH COOLER than yesterday.</span>
+                </div>
+            </div>
+            <div class="top-right-container">
+                <div class="radar-or-sat">
+                    <ul class="options-tabs">
+                        <li class="tab-links active-map-tab" onclick="openMapTab()">RADAR</li>
+                        <li class="tab-links" onclick="openMapTab()">SATELLITE</li>  
+                    </ul>
+                </div>
+                <div class="radar-map">
+                    <img src="images/map.png" id="map-img" alt="radar map">
+                </div>
+                <div class="under-map">
+                    <ul class="under-map-options">
+                        <li>WUNDERMAP |</li>
+                        <li>NEXRAD</li>
+                    </ul>    
+                </div>
+            </div>
+        </div>
+        <div class="middle-forecast-container">
+            <div class="middle-today">
+                <div class="middle-today-top">
+                    <i class="fa-solid fa-cloud-rain" style="color: #6e7277; font-size: 80px; padding-right: 15px;"></i>
+                    <div class="middle-forecast">
+                        <span>TODAY</span>
+                        <span>WED 11/15</span>
+                        <span>HIGH 73</span>
+                    </div>
+                </div>
+                <div class="middle-today-bottom" style="padding-left: 15px;">
+                    <span><a href="#">100% Precip. / 0.82 in</a><br></span>
+                    <span>Rain likely. High 73F. Winds E at 10 to 20 mph. Chance of rain 100%. Rainfall possibly over one inch.</span>
+                </div>
+            </div>
+            <div class="middle-tonight">
+                <div class="middle-today-top">
+                    <i class="fa-solid fa-cloud-rain" style="color: #6e7277; font-size: 80px; padding-right: 15px;"></i>
+                    <div class="middle-forecast">
+                        <span>TONIGHT</span>
+                        <span>WED 11/15</span>
+                        <span>LOW 69</span>
+                    </div>
+                </div>
+                <div class="middle-today-bottom" style="padding-left: 15px;">
+                    <span><a href="#">92% Precip. / 0.45 in</a><br></span>
+                    <span>Rain early...then remaining cloudy with showers overnight. Low 69F. Winds E at 10 to 20 mph. 
+                        Chance of rain 90%. Rainfall around a half an inch.</span>
+                </div>
+            </div>
+            <div class="middle-tomorrow">
+                <div class="middle-today-top">
+                    <i class="fa-solid fa-cloud-bolt" style="color: #6e7277; font-size: 80px; padding-right: 15px;"></i>
+                    <div class="middle-forecast">
+                        <span>TOMORROW</span>
+                        <span>THURS 11/16</span>
+                        <span>HIGH 79</span>
+                    </div>
+                </div>
+                <div class="middle-today-bottom" style="padding-left: 15px;">
+                    <span><a href="#">92% Precip. / 0.45 in</a><br></span>
+                    <span>Cloudy early. Scattered thunderstorms developing later in the day. High 79F. 
+                        Winds ENE at 10 to 20 mph. Chance of rain 40%.</span>
+                </div>
+            </div>
+        </div>
+        <div class="four-square">
+            <div class="precip info-square">
+                <div class="square-title">
+                    <span class="title-of-square">PRECIPITATION</span>
+                </div>
+                <div class="square-body">
+                    <div class="body-spacing">
+                    <h3 style="font-size: 30px; color: darkblue;">100%</h3>
+                    <span>Chance of rain in next 6 hours</span>
+                </div>
+                </div>
+            </div>
+            <div class="pollen info-square">
+                <div class="square-title">
+                    <span class="title-of-square">POLLEN</span>
+                </div>
+                <div class="square-body">
+                    <div class="body-spacing">
+                    <h3 style="font-size: 30px; color: darkgreen;">None</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="air-quality info-square">
+                <div class="square-title">
+                    <span class="title-of-square">AIR QUALITY</span>
+                </div>
+                <div class="square-body">
+                    <div class="body-spacing">
+                    <h3 style="font-size: 30px; color: darkgreen;">Good</h3>
+                    <span>Air Quality Index</span>
+                    <h3>34</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="uv-index info-square">
+                <div class="square-title">
+                    <span class="title-of-square">UV INDEX</span>
+                </div>
+                <div class="square-body">
+                    <div class="body-spacing">
+                    <h3 style="font-size: 30px; color: orange;">Moderate</h3>
+                    <span>Daytime UV</span>
+                    <h3>4</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-boxes">
+            <div class="bottom-left-container">
+                <div class="additional-conditions">
+                    <div class="square-title">
+                        <span class="title-of-square">ADDITIONAL CONDITIONS</span>
+                    </div>
+                    <div class="conditions-body">
+                        <div class="conditions-left">
+                            <span>Pressure</span>
+                            <span>Visibility</span>
+                            <span>Clouds</span>
+                            <span>Dew Point</span>
+                            <span>Humidity</span>
+                            <span>Rainfall</span>
+                            <span>Snow Depth</span>
+                        </div>
+                    <div class="conditions-right">
+                        <div class="conditions-left">
+                            <span>29 in</span>
+                            <span>7 mi</span>
+                            <span>Cloudy</span>
+                            <span>68 F</span>
+                            <span>78%</span>
+                            <span>0.01 in</span>
+                            <span>0 in</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="bottom-right-container">
+                <div class="top-stories">
+                    <div class="square-title">
+                        <span class="title-of-square">TOP STORIES</span>
+                    </div>
+                    <div class="stories-body">
+                        <div class="video-player">
+                            <div class="video-player-box">
+                                <img src="images/rain.jpeg" alt="rain" class="news-img active-dot">
+                                <img src="images/clouds.jpg" alt="rain" class="news-img">
+                                <img src="images/travel.jpg" alt="rain" class="news-img">
+                            </div>
+                        </div>
+                        <div class="video-player-subtext" style="margin-left: 10%;">
+                            <span class="news-title active-dot"style="font-weight: bold;">Standing Water in Florida after Heavy Rains</span>
+                            <span class="news-title"style="font-weight: bold;">What to know about Two Atlantic Areas to Watch</span>
+                            <span class="news-title"style="font-weight: bold;">Thanksgiving Travel? Here's Your Forecast</span>
+                        </div>
+                        <div class="video-slider-container">
+                            <i class="fa-solid fa-less-than" style="color: #568ff0; font-size: 30px;" onclick="activeNewsCircleBackward()"></i>
+                            <div class="circle news1 active-news" onclick="clickDot(0)"></div>
+                            <div class="circle news2" onclick="clickDot(1)"></div>
+                            <div class="circle news3" onclick="clickDot(2)"></div>
+                            <i class="fa-solid fa-greater-than" style="color: #568ff0; font-size: 30px;" onclick="activeNewsCircleForward()"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="astronomy">
+
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            //this function is for the forecast options
+            let tabLinks = document.getElementsByClassName("tab-links");
+
+            function openTab() {
+                for (tabLink of tabLinks) {
+                    tabLink.classList.remove("active-tab");
+                }
+
+                event.currentTarget.classList.add("active-tab");
+
+                //document.getElementById(tabName).classList.add("active-tab");
+            }
+
+            //this function is for the map options
+            function openMapTab() {
+                for (tabLink of tabLinks) {
+                    tabLink.classList.remove("active-map-tab");
+                }
+
+                event.currentTarget.classList.add("active-map-tab");
+            }
+
+            </script>
+
+            <script>
+            //these functions are for the news dots
+
+            let newsDots = document.getElementsByClassName("circle");
+            let newsTitles = document.getElementsByClassName("news-title");
+            let newsImages = document.getElementsByClassName("news-img");
+
+            //clicking the forward arrow
+            function activeNewsCircleForward() {
+                let currDotIndex;
+                for (let i = 0; i < newsDots.length; i++) {
+                    if (newsDots[i].className.includes("active-news")) {
+                        currDotIndex = i;
+                        break;
+                    }
+                }
+                newsDots[currDotIndex].classList.remove("active-news");
+                newsTitles[currDotIndex].classList.remove("active-dot");
+                newsImages[currDotIndex].classList.remove("active-dot");
+
+                if (currDotIndex === newsDots.length - 1) {
+                    newsDots[0].classList.add("active-news");
+                    newsTitles[0].classList.add("active-dot");
+                    newsImages[0].classList.add("active-dot");
+                } else {
+                    newsDots[currDotIndex + 1].classList.add("active-news");
+                    newsTitles[currDotIndex + 1].classList.add("active-dot");
+                    newsImages[currDotIndex + 1].classList.add("active-dot");
+                }
+            }
+
+            //clicking the back arrow
+            function activeNewsCircleBackward() {
+                console.log(newsDots);
+                let currDotIndex;
+                for (let i = newsDots.length - 1; i >= 0; i--) {
+                    if (newsDots[i].className.includes("active-news")) {
+                        currDotIndex = i;
+                        break;
+                    }
+                }
+
+                newsDots[currDotIndex].classList.remove("active-news");
+                newsTitles[currDotIndex].classList.remove("active-dot");
+                newsImages[currDotIndex].classList.remove("active-dot");
+
+                if (currDotIndex === 0) {
+                    newsDots[newsDots.length-1].classList.add("active-news");
+                    newsTitles[newsTitles.length-1].classList.add("active-dot");
+                    newsImages[newsImages.length-1].classList.add("active-dot");
+                } else {
+                    newsDots[currDotIndex - 1].classList.add("active-news");
+                    newsTitles[currDotIndex - 1].classList.add("active-dot");
+                    newsImages[currDotIndex - 1].classList.add("active-dot");
+                }
+            }
+
+            //clicking one of the dots
+
+            function clickDot(dotnum) {
+                for (let i=0; i< newsDots.length; i++) {
+                    newsDots[i].classList.remove("active-news");
+                    newsTitles[i].classList.remove("active-dot");
+                    newsImages[i].classList.remove("active-dot");
+                }
+
+                newsDots[dotnum].classList.add("active-news");
+                newsTitles[dotnum].classList.add("active-dot");
+                newsImages[dotnum].classList.add("active-dot");
+            }
+        </script>
+        <script>
+
+            function updateTime() {
+                const now = new Date();
+                const currDateTime = now.toLocaleString();
+
+                document.querySelector('#current-time').textContent = currDateTime;
+            }
+            updateTime()
+            setInterval(updateTime, 10000);
+        </script>
+        </body>
+
+
+</html>
+
+

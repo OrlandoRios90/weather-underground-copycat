@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: small;
+}
+
+nav {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.88);
+    color: white;
+}
+
+span {
+    font-size: 18px;
+}
+
+.popular-cities-container {
+    width: 100%;
+    background: rgba(211, 211, 211, 0.3);
+}
+
+.popular-city {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.popular-city-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.top-left-container, .top-right-container {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.popular-cities-list li {
+    padding: 8px;
+}
+
+.title-of-square {
+    padding: 10px 0 5px 10px;
+}
+
+.square-body {
+    height: 75%;
+    text-align: right;
+}
+
+.body-spacing {
+    position: relative;
+    top: 25%;
+    padding-right: 10px;
+}
+
+.popular-cities-list i {
+    font-size: 30px;
+    padding-right: 4px;
+}
+
+.nav-items, .middle-forecast-container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 50px;
+}
+
+.four-square {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 0 0 50px;
+    width: 64%;
+    gap: 25px;
+}
+
+.middle-today-top {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 0 10px 15px;
+}
+
+.middle-forecast {
+    display: flex;
+    flex-direction: column;
+}
+
+.current-city-title {
+    padding: 30px 0 10px 50px;
+    background: rgba(211, 211, 211, 0.5);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.forecast-options-tabs {
+    padding-left: 50px;
+    background: rgba(211, 211, 211, 0.5);
+}
+
+.radar-or-sat, .under-map-options, .middle-today, .middle-tomorrow {
+    background: rgba(211, 211, 211, 0.5);
+}
+
+.middle-tonight {
+    background: rgba(211, 211, 211, 0.7);
+}
+
+.middle-today, .middle-tonight, .middle-tomorrow {
+    width: 22%;
+    height: 250px;
+}
+
+.active-tab {
+    background: white;
+    font-weight: bold;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-top: 2px solid blue;
+}
+
+#map-img {
+    width: 100%;
+}
+
+.active-map-tab {
+    font-weight: bold;
+    border-bottom: 3px solid blue;
+    
+}
+
+.tab-links {
+    padding: 20px;
+}
+
+#logo {
+    margin-right: 20px;
+}
+
+nav ul, .popular-cities-list, .options-tabs, .under-map-options  {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.under-map-options {
+    justify-content: flex-end;
+}
+
+.under-map {
+    position: relative;
+    top: -4px;
+}
+
+.under-map ul li {
+    font-size: 15px;
+    font-weight: bold;
+    color: #3170dd;
+    padding: 5px 0 5px 5px;
+}
+
+.popular-cities-list {
+    margin-left: 50px;
+}
+
+nav li {
+    padding: 10px;
+}
+
+.nav-search {
+    margin: 11px 0 11px 50px;
+    padding-left: 5px;
+    padding-right: 50px;
+}
+
+input.nav-search::placeholder {
+    color: rgb(6, 130, 192);
+}
+
+.top-weather-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 35px 0 40px 50px;
+    gap: 50px;
+}
+
+.top-left-middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px 0 0 30px;
+}
+
+.top-left-bottom {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.circle-text {
+    padding: 50px;
+}
+
+.temperature-circle {
+    text-align: center;
+    border-radius: 50%;
+    border: 5px solid orange;
+}
+
+.wind-circle {
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 50%;
+    border: 3px solid gray;
+}
+
+.wind-circle-text {
+    padding: 18px;
+}
+
+.square-title {
+    background: rgba(211, 211, 211, 0.7);
+    height: 25%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.info-square {
+    background: rgba(211, 211, 211, 0.5);
+    width: 25%;
+    height: 150px;
+}
+
+.bottom-boxes {
+    padding: 30px 0 0 50px;
+    display: flex;
+    flex-direction: row;
+    width: 64%;
+    gap: 25px;
+}
+
+.bottom-left-container, .bottom-right-container {
+    width: 50%;
+}
+
+.bottom-left-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.stories-body {
+    background: rgba(211, 211, 211, 0.5);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.additional-conditions {
+        background: rgba(211, 211, 211, 0.5);
+        
+        display: flex;
+        flex-direction: column;
+}
+
+.conditions-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.stories-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.conditions-left {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px 0 20px;
+}
+
+.conditions-left span {
+    padding-bottom: 10px;
+}
+
+.video-player-box {
+    width: 80%;
+    height: 250px;
+    background: rgba(211, 211, 211, 0.7);
+    margin: 5% 10% 5% 10%;
+}
+
+.video-slider-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5% 15% 0 15%;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(96, 95, 95, 0.9);
+}
+
+.active-news {
+    background: #3170dd;
+}
+
+.news-title {
+    display: none;
+}
+
+.news-img {
+    width: 100%;
+    display: none;
+}
+
+
+.news-title.active-dot, .news-img.active-dot {
+    display: block;
+}
+
+
+
+/* item on hover fx */
+#red:hover {
+    border-top: thick solid red;
+    cursor: pointer;
+}
+#orange:hover {
+    border-top: thick solid orange;
+    cursor: pointer;
+}
+#yellow:hover {
+    border-top: thick solid yellow;
+    cursor: pointer;
+}
+#green:hover {
+    border-top: thick solid green;
+    cursor: pointer;
+}
+#light-blue:hover {
+    border-top: thick solid lightblue;
+    cursor: pointer;
+}
+#blue:hover {
+    border-top: thick solid blue;
+    cursor: pointer;
+}
+.fa-star:hover {
+    color: #3170dd !important;
+    cursor: pointer;
+} 
+.popular-city:hover {
+    background: rgba(211, 211, 211, 0.6);
+    cursor: pointer;
+}
+
+.video-slider-container i:hover, .circle:hover, .tab-links:hover {
+    cursor: pointer;
+}
+/* end item hovers */
+
+.login-links a {
+    color: white;
+}
+
+@media only screen and (max-width: 800px) {
+    
+    .top-weather-container {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    .top-left-container, .top-right-container {
+        width: 100%;
+    }
+}
